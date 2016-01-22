@@ -33,39 +33,84 @@ public class Solution
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        String motherName = reader.readLine();
-        Cat catMother = new Cat(motherName);
+        String gfName = reader.readLine();
+        Cat gf = new Cat(gfName);
 
-        String daughterName = reader.readLine();
-        Cat catDaughter = new Cat(daughterName, catMother);
+        String gmName = reader.readLine();
+        Cat gm = new Cat(gmName);
 
-        System.out.println(catMother);
-        System.out.println(catDaughter);
+        String fName = reader.readLine();
+        Cat f = new Cat(fName, gf);
+
+        String mName = reader.readLine();
+        Cat m = new Cat(gm, mName);
+
+        String sName = reader.readLine();
+        Cat s = new Cat(sName, f, m);
+
+        String dName = reader.readLine();
+        Cat d = new Cat(dName, f, m);
+
+
+
+        System.out.println(gf);
+        System.out.println(gm);
+        System.out.println(f);
+        System.out.println(m);
+        System.out.println(s);
+        System.out.println(d);
     }
 
     public static class Cat
     {
         private String name;
-        private Cat parent;
+        private Cat father;
+        private Cat mother;
 
         Cat(String name)
         {
             this.name = name;
         }
 
-        Cat(String name, Cat parent)
+        Cat(String name, Cat father, Cat mother)
         {
             this.name = name;
-            this.parent = parent;
+            this.father = father;
+            this.mother = mother;
         }
+
+        Cat(String name, Cat father)
+        {
+            this.name = name;
+            this.father = father;
+           // this.mother = mother;
+        }
+
+        Cat(Cat mother, String name)
+        {
+            this.name = name;
+            //this.father = father;
+            this.mother = mother;
+        }
+
+
+
+
 
         @Override
         public String toString()
         {
-            if (parent == null)
-                return "Cat name is " + name + ", no mother ";
+            if (father == null && mother == null)
+                return "Cat name is " + name + ", no mother" + ", no father";
+            else if (father == null)
+                return "Cat name is " + name + ", mother is " + mother.name + ", no father";
+            else if (mother == null)
+                return "Cat name is " + name + ", no mother"+ ", father is " + father.name;
             else
-                return "Cat name is " + name + ", mother is " + parent.name;
+                return "Cat name is " + name + ", mother is " + mother.name + ", father is " + father.name;
+
+
+
         }
     }
 
