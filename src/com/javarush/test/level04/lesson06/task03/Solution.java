@@ -27,6 +27,10 @@ public class Solution
             boolean sorted = true;
 
             for (int j = 0; j < i; j++) {
+=======
+
+
+>>>>>>> 79ed4f236b5f917dd9edceb4bea08653e8d13a9c
 
                 if (a[j] < a[j+1]) {
                     int temp = a[j];
@@ -41,6 +45,11 @@ public class Solution
             }
         }
 
+
+        for (int i=0; i<3; i++)
+        {
+            System.out.print(a[i]+ " ");
+        }
 
         for (int i=0; i<3; i++)
         {
