@@ -13,7 +13,7 @@ public class Solution
         int a=5;
         int b=7;
      /////   //a=5;
-        //b=7;
+        ////b=7;
         System.out.println(a+b);
         System.out.println(a*b);
     }
