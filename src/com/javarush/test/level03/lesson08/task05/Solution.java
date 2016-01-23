@@ -12,13 +12,18 @@ public class Solution
 {
     public static void main(String[] args) throws Exception
     {
-        String n,c,s;
-        InputStream inputStream=System.in;
-        BufferedReader read=new BufferedReader(new InputStreamReader(System.in));
-        n=read.readLine();
-        c=read.readLine();
-        s=read.readLine();
-System.out.println(n +" "+ c +" "+ s + " = Чистая любовь, да-да!");
-
+        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
+String n1 = read.readLine();
+for (int i =1; i<2; i++)
+       if (n1.equals("привет"))
+        System.out.println(i + ". Привет Женя и Олег");
+        else
+           if (n1.equals("пока"))
+        System.out.println(i + ". Пока Женя и Олег");
+        else
+           if (n1.equals("как дела?"))
+        System.out.println("хорошо");
+        else
+               System.out.println(i + ". Не пиши ерунду!!!");
     }
 }
