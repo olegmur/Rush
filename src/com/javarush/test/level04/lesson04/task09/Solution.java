@@ -23,27 +23,29 @@ public class Solution
 {
     public static void main(String[] args) throws Exception
     {
-        BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
-        double n = Double.parseDouble(read.readLine());
+        BufferedReader reader  = new BufferedReader(new InputStreamReader(System.in));
+        double n=Double.parseDouble(reader.readLine());
 
-        double k,t;
-        k=n/5;
-        int res = (int) k;
-        t=n-res*5;
-        if (t<=3)
+        int k=(int) n/5;
 
-            System.out.println("зеленый");
+         Double t = n-k*5;
 
+
+        if (n >= 0 && n <= 60)
+        {
+            if (t < 3)
+            {
+                System.out.println("зеленый");
+            } else if (t < 4)
+            {
+                System.out.println("желтый");
+            } else if (t < 5)
+            {
+                System.out.println("красный");
+            }
+        }
         else
-        if (t<=4)
-
-            System.out.println("желтый");
-
-        else
-        if (t<=5)
-
-            System.out.println("красный");
-
+            System.out.println("В часу 60 минут");
 
 
     }

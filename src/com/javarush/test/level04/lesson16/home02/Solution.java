@@ -10,19 +10,42 @@ public class Solution
 {
     public static void main(String[] args)   throws Exception
     {
-        BufferedReader is = new BufferedReader(new InputStreamReader(System.in));
-        //String m = is.readLine();
-        // String n = is.readLine();
-        int k=0;
-        int n1 = Integer.parseInt(is.readLine());
-        while (n1!=-1)
-        {k+=n1;
-            n1 = Integer.parseInt(is.readLine());
-        }
-        k=k-1;
+        int a[];
+        int n;
+        a = new int[3];
+        BufferedReader reader  = new BufferedReader(new InputStreamReader(System.in));
+        for (int i=0; i<3; i++)
+        {
 
-        //int n2 = Integer.parseInt(is.readLine());
-        // int n3 = Integer.parseInt(is.readLine());
-        System.out.println(k);//напишите тут ваш код
+            n=Integer.parseInt(reader.readLine());
+            a[i]=n;
+
+        }
+
+        for (int i = a.length - 1; i >= 1; i--) {
+
+            boolean sorted = true;
+
+            for (int j = 0; j < i; j++) {
+
+                if (a[j] < a[j+1]) {
+                    int temp = a[j];
+                    a[j] = a[j+1];
+                    a[j+1] = temp;
+                    sorted = false;
+                }
+            }
+
+            if(sorted) {
+                break;
+            }
+        }
+
+
+
+
+            System.out.println(a[1]);
+
+
     }
 }

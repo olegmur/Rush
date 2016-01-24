@@ -1,10 +1,23 @@
-package com.javarush.test.level04.lesson06.task03;
+package com.javarush.test.level06.lesson11.bonus03;
 
-/* Сортировка трех чисел
-Ввести с клавиатуры три числа, и вывести их в порядке убывания.
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/* Задача по алгоритмам
+Задача: Написать программу, которая вводит с клавиатуры 5 чисел и выводит их в возрастающем порядке.
+Пример ввода:
+3
+2
+15
+6
+17
+Пример вывода:
+2
+3
+6
+15
+17
 */
-
-import java.io.*;
 
 public class Solution
 {
@@ -12,9 +25,9 @@ public class Solution
     {
         int a[];
         int n;
-        a = new int[3];
+        a = new int[5];
         BufferedReader reader  = new BufferedReader(new InputStreamReader(System.in));
-        for (int i=0; i<3; i++)
+        for (int i=0; i<5; i++)
         {
 
             n=Integer.parseInt(reader.readLine());
@@ -23,12 +36,12 @@ public class Solution
         }
 
         for (int i = a.length - 1; i >= 1; i--) {
-
+    
             boolean sorted = true;
 
             for (int j = 0; j < i; j++) {
 
-                if (a[j] < a[j+1]) {
+                if (a[j] > a[j+1]) {
                     int temp = a[j];
                     a[j] = a[j+1];
                     a[j+1] = temp;
@@ -42,12 +55,13 @@ public class Solution
         }
 
 
-        for (int i=0; i<3; i++)
+        for (int i=0; i<5; i++)
         {
 
             System.out.println(a[i]);
 
         }
+
 
     }
 }
