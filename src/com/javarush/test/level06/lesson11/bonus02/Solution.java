@@ -19,12 +19,12 @@ import java.io.InputStreamReader;
 дочь Пушинка
 
 Пример вывода:
-Cat name is дедушка Вася, no mother, no dad
-Cat name is бабушка Мурка, no mother, no dad
-Cat name is папа Котофей, no mother, dad is дедушка Вася
-Cat name is мама Василиса, mother is бабушка Мурка, no dad
-Cat name is сын Мурчик, mother is мама Василиса, dad is папа Котофей
-Cat name is дочь Пушинка, mother is мама Василиса, dad is папа Котофей
+Cat name is дедушка Вася, no mother, no father
+Cat name is бабушка Мурка, no mother, no father
+Cat name is папа Котофей, no mother, father is дедушка Вася
+Cat name is мама Василиса, mother is бабушка Мурка, no father
+Cat name is сын Мурчик, mother is мама Василиса, father is папа Котофей
+Cat name is дочь Пушинка, mother is мама Василиса, father is папа Котофей
 */
 
 public class Solution
@@ -33,71 +33,39 @@ public class Solution
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        String granddadName=reader.readLine();
-        String grandMotherName=reader.readLine();
-        String motherName=reader.readLine();
-        String dadName=reader.readLine();
-        String sonName=reader.readLine();
-        String daughterName=reader.readLine();
+        String motherName = reader.readLine();
+        Cat catMother = new Cat(motherName);
 
+        String daughterName = reader.readLine();
+        Cat catDaughter = new Cat(daughterName, catMother);
 
-        Cat grandMother = new Cat(grandMotherName);
-        Cat granddad = new Cat(granddadName);
-        Cat father = new Cat(granddad, dadName);
-        Cat mother = new Cat(motherName, grandMother);
-        Cat daughter = new Cat(daughterName, father, mother);
-        Cat son = new Cat(sonName, father, mother);
-
-        System.out.println(granddad);
-        System.out.println(grandMother);
-        //System.out.println(father);
-        System.out.println(mother);
-        System.out.println(son);
-        System.out.println(daughter);
+        System.out.println(catMother);
+        System.out.println(catDaughter);
     }
 
     public static class Cat
     {
-        public String name;
-        public Cat mom;
-        public Cat dad;
-
+        private String name;
+        private Cat parent;
 
         Cat(String name)
         {
             this.name = name;
         }
 
-        Cat(String name, Cat mom)
+        Cat(String name, Cat parent)
         {
             this.name = name;
-            this.mom = mom;
-        }
-
-        Cat(Cat dad, String name)
-        {
-            this.name = name;
-            this.dad = dad;
-        }
-
-        Cat(String name, Cat mom, Cat dad)
-        {
-            this.name = name;
-            this.mom = mom;
-            this.dad=dad;
+            this.parent = parent;
         }
 
         @Override
-       public String toString()
+        public String toString()
         {
-            if (mom == null && dad == null)
-                return "Cat name is " + name + ", no mother "+", no dad";
-            else if (mom == null && dad !=null)
-                return "Cat name is " + name + ", mother is " + mom.name + ", no dad";
-            else if (dad == null && mom!=null)
-                return "Cat name is " + name + ", no mother " + ", dad is " + dad.name;
+            if (parent == null)
+                return "Cat name is " + name + ", no mother ";
             else
-                return "Cat name is " + name + ", mother is " + mom.name + ", dad is " + dad.name;
+                return "Cat name is " + name + ", mother is " + parent.name;
         }
     }
 
