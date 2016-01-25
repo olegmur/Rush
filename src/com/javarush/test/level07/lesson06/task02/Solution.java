@@ -15,7 +15,7 @@ public class Solution
 {
     public static void main(String[] args) throws Exception
     {
-        
+
         ArrayList<String> l = new ArrayList<String>();
         ArrayList<String> str = new ArrayList<String>();
         BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
