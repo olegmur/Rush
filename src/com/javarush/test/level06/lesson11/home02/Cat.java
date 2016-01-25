@@ -1,7 +1,6 @@
 package com.javarush.test.level06.lesson11.home02;
 
 import java.util.ArrayList;
-import java.util.List;
 
 /* Статические коты
 1. В классе Cat добавь public статическую переменную cats (ArrayList<Cat>).
@@ -9,27 +8,27 @@ import java.util.List;
 3. Метод printCats должен выводить всех котов на экран. Нужно использовать переменную cats.
 */
 
-public class Cat {
-    public static ArrayList<Cat> cats;
-    static int i;
+public class Cat
+{
+    public static ArrayList<Cat> cats = new ArrayList<Cat>();
 
-    public Cat() {
-
-
-        List<String> stringList=new ArrayList<String>();
-       // cats.add(this.Cat);
-
-    i++;
-
+    public Cat()
+    {
+        cats.add(this);
     }
-    //напишите тут ваш код
 
-    public static void main(String[] args) {
-        //Создай тут 10 котов
+    public static void main(String[] args)
+    {
+        for (int i = 0; i < 10; i++)
+        {
+            Cat cat = new Cat();
+        }
         printCats();
     }
 
-    public static void printCats() {
-        //Добавь свой код для пункта 3 тут
+    public static void printCats()
+    {
+        for (int i = 0; i < cats.size(); i++)
+            System.out.println(cats.get(i));
     }
 }
