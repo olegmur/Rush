@@ -14,7 +14,7 @@ public class Solution
 {
     public static void main(String[] args) throws Exception
     {
-        HashMap<String, String> t = new HashMap<String, String>();
+        Map<String, String> t = new HashMap<String, String>();
         t.put("арбуз" , "ягода");
         t.put("банан" , "трава");
         t.put("вишня" , "ягода");
@@ -28,7 +28,7 @@ public class Solution
 
 
 
-        for (HashMap.Entry<String, String> p : t.entrySet())
+        for (Map.Entry<String, String> p : t.entrySet())
         {
             System.out.println(p.getKey() + " - " + p.getValue());
 
