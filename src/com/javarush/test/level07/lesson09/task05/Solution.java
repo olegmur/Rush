@@ -16,7 +16,7 @@ public class Solution
     {
         //Считать строки с консоли и объявить ArrayList list тут
 
-        ArrayList<String> result = doubleValues(list);
+       // ArrayList<String> result = doubleValues(list);
 
         //Вывести на экран result
     }
