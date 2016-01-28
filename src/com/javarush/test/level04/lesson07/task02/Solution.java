@@ -21,7 +21,7 @@ public class Solution
 {
     public static void main(String[] args) throws Exception
     {
-<<<<<<< db1d5d8f10ba0953d7774890c8bee08eff440aa7
+
         BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(r.readLine());
         if (n>0 && n<1000)
@@ -46,7 +46,7 @@ public class Solution
                 System.out.println("нечетное трехзначное число");
             }
         }
-=======
+
         BufferedReader read = new BufferedReader(new InputStreamReader(System.in));
         int n1 = Integer.parseInt(read.readLine());
         //int n2 = Integer.parseInt(read.readLine());
@@ -54,6 +54,6 @@ public class Solution
 
 
 
->>>>>>> 79ed4f236b5f917dd9edceb4bea08653e8d13a9c
+
     }
 }

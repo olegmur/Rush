@@ -1,7 +1,8 @@
 package com.javarush.test.level08.lesson08.task02;
 
+import javax.swing.text.html.HTMLDocument;
 import java.util.HashSet;
-import java.util.Random;
+import java.util.Iterator;
 import java.util.Set;
 
 /* Удалить все числа больше 10
@@ -11,33 +12,40 @@ import java.util.Set;
 
 public class Solution
 {
+
+
     public static HashSet<Integer> createSet()
     {
-        HashSet<Integer> n = new HashSet<Integer>();
-for (int i = 0; i < 20; i++)
-{
-    n.add(i);
 
-}
-    return n;
+        HashSet<Integer> h = new HashSet<Integer>();
+        for (int i = 0; i < 20; i++)
+        {
+            h.add(i);
+        }
+
+        return h;
     }
 
     public static HashSet<Integer> removeAllNumbersMoreThan10(HashSet<Integer> set)
     {
+        Iterator<Integer> n = set.iterator();
 
-        for(Integer k : set)
-        {if (k>10)
-            System.out.println(k);
-            set.remove(k);}
-
-
+       while (n.hasNext())
+        {
+            if(n.next()>10) {n.remove();}
+        }
         return set;
     }
-    public static void main(String[] args)
-    {
-        System.out.println(removeAllNumbersMoreThan10(createSet()));
-    }
 
 
+
+public static void main(String args[])
+{
+
+    removeAllNumbersMoreThan10(createSet());
+  //  for (Integer n : removeAllNumbersMoreThan10(createSet()))
+   // System.out.println(removeAllNumbersMoreThan10(createSet()));
+
+}
 
 }

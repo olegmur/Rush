@@ -29,35 +29,46 @@ public class Solution
 
     public static void insert10000(List list)
     {
-        for (int i=0; i<10000; i++)
+        for (int i = 0; i < 10000; i++)
+
         {
-            list.add(i,new Object());
+            list.add(new Object());
+
         }
+
     }
 
     public static void get10000(List list)
     {
-        for (int i=0; i<10000; i++)
+
+        for (int i = 0; i < 10000; i++)
+
         {
             list.get(i);
+
         }
+
 
     }
 
     public static void set10000(List list)
     {
-        for (int i=0; i<10000; i++)
+        for (int i = 0; i < 10000; i++)
+
         {
-            list.set(i,new Object());
+            list.set(i, new Object());
+
         }
 
     }
 
     public static void remove10000(List list)
     {
-        for (int i=0; i<list.size(); i++)
+        for (int i = 0; i < 10000; i++)
+
         {
-            list.remove(i);
+            list.remove(0);
+
         }
 
     }
