@@ -14,16 +14,33 @@ public class Solution
 {
     public static void main(String[] args) throws Exception
     {
-        //Считать строки с консоли и объявить ArrayList list тут
+        BufferedReader r = new BufferedReader(new InputStreamReader(System.in));
 
-       // ArrayList<String> result = doubleValues(list);
+        ArrayList<String> list = new ArrayList<String>();
+        for (int i=0; i<10; i++)
+        {
+        list.add(r.readLine());
+        }
+
+        ArrayList<String> result = doubleValues(list);
+
+        for (int i=0; i<result.size(); i++)
+        {
+            System.out.println(result.get(i));
+        }
 
         //Вывести на экран result
     }
 
     public static ArrayList<String> doubleValues(ArrayList<String> list)
     {
-        //напишите тут ваш код
-        return null;
+        ArrayList<String> result = new  ArrayList<String>();
+
+        for (String m: list)
+        {
+            result.add(m);
+            result.add(m);
+        }
+        return result;
     }
 }

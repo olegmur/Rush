@@ -22,7 +22,7 @@ public class Solution
     {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String s = reader.readLine();
-//if (s.)
+
         //напишите тут ваш код
     }
 

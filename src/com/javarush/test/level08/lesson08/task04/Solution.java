@@ -2,7 +2,6 @@ package com.javarush.test.level08.lesson08.task04;
 
 import java.util.Date;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
 
 /* Удалить всех людей, родившихся летом
@@ -12,48 +11,51 @@ import java.util.Map;
 
 public class Solution
 {
-
-       public static void main (String[] args)
-    {
-        removeAllSummerPeople(createMap());
-       // for (Map.Entry<String, Date> n : removeAllSummerPeople(createMap()).entrySet())
-        //System.out.println(n.getKey()+" "+ n.getValue());
-
-    }
-
-
-
     public static HashMap<String, Date> createMap()
     {
         HashMap<String, Date> map = new HashMap<String, Date>();
-        map.put("Stallone1", new Date("JUNE 1 1980"));
+        map.put("Stallone", new Date("JUNE 1 1980"));
         map.put("Stallone2", new Date("JUNE 1 1980"));
         map.put("Stallone3", new Date("JUNE 1 1980"));
-        map.put("Stallone4", new Date("JUNE 7 1980"));
-        map.put("Stallone5", new Date("JUNE 6 1980"));
-        map.put("Stallone6", new Date("JUNE 8 1980"));
-        map.put("Stallone7", new Date("JUNE 7 1980"));
-        map.put("Stallone8", new Date("JUNE 8 1980"));
-        map.put("Stallone9", new Date("JUNE 6 1980"));
-        map.put("Stallone10", new Date("JUNE 9 1980"));
-        //напишите тут ваш код
-
+        map.put("Stallone4", new Date("JUNE 1 1980"));
+        map.put("Stallone5", new Date("JUNE 1 1980"));
+        map.put("Stallone6", new Date("JUNE 1 1980"));
+        map.put("Stallone7", new Date("JUNE 1 1980"));
+        map.put("Stallone8", new Date("JUNE 1 1980"));
+        map.put("Stallone9", new Date("DECEMBER 1 1980"));
+        map.put("Stallone10", new Date("SEPTEMBER 1 1980"));
         return map;
     }
 
     public static void removeAllSummerPeople(HashMap<String, Date> map)
     {
-        Iterator<Map.Entry<String, Date>> it = map.entrySet().iterator();
-        while(it.hasNext())
+        HashMap<String, Date> map2 = map;
+        for (Map.Entry<String, Date> m: map.entrySet())
         {
-            if (it.next().getValue().getMonth()>5 && it.next().getValue().getMonth()<9)
-            {it.remove();
-                System.out.println(it);
+            Date d = m.getValue();
+            if (d.getMonth()+1>= 6 && d.getMonth()+1<=8)
+            {
+            map2.remove(m.getKey());
             }
         }
-
-
+        map = map2;
 
 
     }
+
+
+public static void main (String[] args)
+{
+    HashMap<String, Date> map = createMap();
+    removeAllSummerPeople(map);
+
+    for (Map.Entry<String, Date> m: map.entrySet())
+    {
+        System.out.println(m);
+    }
+
+
+}
+
+
 }
